@@ -1,0 +1,83 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('background.jpg') center center / cover no-repeat;
+    color: #fff; 
+    min-height: 100vh; 
+    
+}
+
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+nav img {
+    width: 200px;
+    
+}
+
+.nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link li {
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+
+.nav-link button {
+    background-color: red;
+    color: #fff;
+    font-size: large;
+    padding: 10px;
+    border-radius: 7px;
+    transition: background-color 0.2s;
+
+}
+
+
+
+
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    font-size: 1.5rem;
+}
+
+.hero-mail input {
+    padding: 20px;
+    width: 300px;
+    font-size: 1.2rem;
+    border-radius: 7px;
+}
+
+.hero-mail button {
+    padding: 20px;
+    width: 200px;
+    font-size: 1.2rem;
+    color:#fff;
+    background-color: red;
+    transition: background-color 0.2s;
+    border-radius: 7px;
+}
+
+
+button:hover {
+    background-color: rgb(128, 30, 30);
+}
