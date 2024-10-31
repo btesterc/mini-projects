@@ -11,6 +11,7 @@ function bringData(e) {
 
     const lat = document.querySelector("#latitude").value;
     const long = document.querySelector("#longtitute").value;
+    
 
 
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}.52&longitude=${long}&current=temperature_2m,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,wind_speed_10m&timezone=auto`)
@@ -19,6 +20,7 @@ function bringData(e) {
 
         const current = data.current;
         console.log(current)
+        console.log(data.current_weather)
         const isDay = current.is_day;
         const rain = current.rain;
         const snowfall = current.snowfall;
@@ -27,33 +29,33 @@ function bringData(e) {
         const time  = current.time;
 
         const ptemp = document.createElement("p")
-        ptemp.innerText = `current temprature = ${temperature}`
+        ptemp.innerText = `current temprature = ${temperature}`;
 
         const pwind = document.createElement("p")
-        pwind.innerText = `current wind speed = ${windSpeed}`
+        pwind.innerText = `current wind speed = ${windSpeed}`;
 
-        const ptime= document.createElement("p")
-        ptime.innerText = `Date & Time = ${time}`
+        const ptime= document.createElement("p");
+        ptime.innerText = `Date & Time = ${time}`;
 
         
 //    I checked only the rain and sunny conditions
 
         const img = document.createElement("img")
         if (isDay === 1 && rain === 1) {
-            img.src = "rain.jpg"
+            img.src = "./images/rain.jpg";
         } else if (isDay === 0 && rain === 1) {
-            img.src ="rainnight.jpg"
+            img.src ="./images/rainnight.jpg";
         } else if (isDay === 1 && rain === 0) {
             if (current.cloud_cover > 50) {
-                img.src = "cloudy.jpeg"
+                img.src = "./images/cloudy.jpeg";
             }else {
-                img.src = "sunny.jpeg"
+                img.src = "./images/sunny.jpeg";
              }            
-        } else if (isDay === 0 && rain === 1) {
+        } else if (isDay === 0 && rain === 0) {
             if (current.cloud_cover > 50) {
-                img.src = "cloudynight.jpg"
+                img.src = "./images/cloudynight.jpg";
             }else {
-                img.src = "stars.jpeg"
+                img.src = "./images/stars.jpeg";
              }            
         }
 
@@ -62,7 +64,8 @@ function bringData(e) {
         card.appendChild(pwind);
         card.appendChild(ptime);
      
-    }).catch((err) => {console.log(err)})
+    }).catch((err) => {console.log(err)});
+
 
    
 }
