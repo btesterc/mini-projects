@@ -30,9 +30,12 @@ function bringData(e) {
         ptemp.innerText = `current temprature = ${temperature}`
 
         const pwind = document.createElement("p")
-        pwind.innerText = `current wind speed = ${windSpeed}
+        pwind.innerText = `current wind speed = ${windSpeed}`
+
+        const ptime= document.createElement("p")
+        ptime.innerText = `time= ${time}`
+
         
-        `
 //    I checked only the rain and sunny conditions
 
         const img = document.createElement("img")
@@ -54,17 +57,13 @@ function bringData(e) {
              }            
         }
 
-
-
-
         card.appendChild(img);
         card.appendChild(ptemp);
         card.appendChild(pwind);
+        card.appendChild(ptime);
+     
+    }).catch((err) => {console.log(err)})
 
-        lat.innerText = "";
-        long.innerText = "";
-
-    })
    
 }
 

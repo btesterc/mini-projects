@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+main {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.info {
+    margin: 30px auto;
+    text-align: center;
+}
