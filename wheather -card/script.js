@@ -13,7 +13,7 @@ function bringData(e) {
     const long = document.querySelector("#longtitute").value;
 
 
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}.52&longitude=${long}&current=temperature_2m,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,wind_speed_10m`)
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}.52&longitude=${long}&current=temperature_2m,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,wind_speed_10m&timezone=auto`)
     .then((promise) => promise.json())
     .then((data) => {
 
@@ -33,7 +33,7 @@ function bringData(e) {
         pwind.innerText = `current wind speed = ${windSpeed}`
 
         const ptime= document.createElement("p")
-        ptime.innerText = `time= ${time}`
+        ptime.innerText = `Date & Time = ${time}`
 
         
 //    I checked only the rain and sunny conditions
