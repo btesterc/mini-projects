@@ -63,10 +63,13 @@ function bringData(e) {
         card.appendChild(ptemp);
         card.appendChild(pwind);
         card.appendChild(ptime);
+
+        document.querySelector("#latitude").value = "";
+        document.querySelector("#longtitute").value = "";
      
     }).catch((err) => {console.log(err)});
 
-
+    
    
 }
 
