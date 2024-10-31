@@ -41,8 +41,19 @@ function bringData(e) {
         } else if (isDay === 0 && rain === 1) {
             img.src ="rainnight.jpg"
         } else if (isDay === 1 && rain === 0) {
-            img.src = "sunny.jpeg"
-        } 
+            if (current.cloud_cover > 50) {
+                img.src = "cloudy.jpeg"
+            }else {
+                img.src = "sunny.jpeg"
+             }            
+        } else if (isDay === 0 && rain === 1) {
+            if (current.cloud_cover > 50) {
+                img.src = "cloudynight.jpg"
+            }else {
+                img.src = "stars.jpeg"
+             }            
+        }
+
 
 
 
